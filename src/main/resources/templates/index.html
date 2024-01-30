@@ -44,7 +44,7 @@
                         <label>3．カテゴリ選択：</label>
                         <div class="checkbox-group">
 
-                            <label th:each="item:${categoryCheckBox}" th:object="${thanksForm}">
+                            <label th:each="item : ${categoryCheckBox}" th:object="${thanksForm}">
                                 <input type="checkbox" name="selectedCategory" th:value="${item.key}" th:text="${item.value}" th:field="*{category}" />
                             </label>
                         </div>

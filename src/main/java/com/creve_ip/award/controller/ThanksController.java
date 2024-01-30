@@ -19,9 +19,10 @@ import com.creve_ip.award.form.ThanksForm;
 public class ThanksController {
 
     @GetMapping("/award")
-    public ModelAndView award(ModelAndView mav) {
+    public ModelAndView award(ModelAndView mav, ThanksForm thanksForm) {
 
         mav.addObject("categoryCheckBox", getCheckBoxCategory());
+        mav.addObject("thanksForm", thanksForm);
         mav.setViewName("index");
         return mav;
     }
