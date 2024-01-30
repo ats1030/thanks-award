@@ -18,24 +18,24 @@
             <div class="modal-content">
                 <span class="close" id="closeModalBtn">&times;</span>
                 <h2>サンクスカード作成フォーム</h2>
-                <form th:action="@{/award}" method="post">
+                <form th:action="@{/award}" method="post" th:object="${thanksForm}">
                     <!-- フォームの内容をここに追加 -->
                     <div class="form-group">
                         <label>1．送り主を明かすかどうか：</label>
                         <div class="radio-group">
-                            <input type="radio" name="senderVisibility" value="yes" id="senderYes">
+                            <input type="radio" name="senderVisibility" value="yes" id="senderYes" th:field="*{senderVisibility}" />
                             <label for="senderYes">はい</label>
 
-                            <input type="radio" name="senderVisibility" value="no" id="senderNo">
+                            <input type="radio" name="senderVisibility" value="no" id="senderNo" th:field="*{senderVisibility}" />
                             <label for="senderNo">いいえ</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="recipient">2．投票先：</label>
-                        <select id="recipient" name="recipient">
-                            <option value="employee1">社員1</option>
-                            <option value="employee2">社員2</option>
+                        <select id="recipient" name="recipient" th:field="*{recipient}">
+                            <option value="社員1">社員1</option>
+                            <option value="社員2">社員2</option>
                             <!-- 他の社員を追加 -->
                         </select>
                     </div>
@@ -52,7 +52,7 @@
 
                     <div class="form-group">
                         <label for="episode">4．エピソード：</label>
-                        <textarea id="episode" name="episode" rows="4" placeholder="エピソードを入力してください"></textarea>
+                        <textarea id="episode" name="episode" rows="4" placeholder="エピソードを入力してください" th:field="*{episode}"></textarea>
                     </div>
 
                     <button type="submit">投稿する</button>

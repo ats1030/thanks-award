@@ -29,13 +29,24 @@ public class ThanksController {
 
     @PostMapping("/award")
     public void saveObject(ThanksForm thanksForm) {
-        for(String element : thanksForm.getCategory()) {
-            System.out.println("選択された要素: " + element);
+        // tmp
+        System.out.println("1．送り主を明かすかどうか：" + thanksForm.getSenderVisibility());
+        
+        // tmp
+        System.out.println("2．投票先：" + thanksForm.getRecipient());
+        
+        // tmp
+        System.out.println("3．カテゴリ選択：");
+        for (String element : thanksForm.getCategory()) {
+            System.out.println("  " + element);
         }
+        
+        // tmp
+        System.out.println("4．エピソード：" + thanksForm.getEpisode());
     }
-    
+
     // チェックボックス用
-    private Map<String, String> getCheckBoxCategory(){
+    private Map<String, String> getCheckBoxCategory() {
         Map<String, String> CheckBoxCategory = new LinkedHashMap<String, String>();
         CheckBoxCategory.put("colleague", "同僚への感謝");
         CheckBoxCategory.put("customer", "お客様に貢献できたことへの感謝");
