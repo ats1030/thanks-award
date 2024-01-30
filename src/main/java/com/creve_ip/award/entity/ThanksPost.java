@@ -16,13 +16,13 @@ public class ThanksPost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String senderVisibility; // 1．投稿者公表の可否 FIXME: Booleanにする？
+    private boolean senderVisibility; // 1．投稿者公表の可否 FIXME: Booleanにする？
     
     private String sender;
 
     private String recipient; // 2．受賞者
 
-    private String categoryId; // 3．カテゴリーテーブルに対応する FIXME: intにする？
+    private Long categoryId; // 3．カテゴリーテーブルに対応する FIXME: intにする？
 
     private String episode; // 4．具体的なエピソード
 }

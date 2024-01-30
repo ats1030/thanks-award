@@ -13,6 +13,8 @@ import org.springframework.web.util.HtmlUtils;
 
 import com.creve_ip.award.Greeting;
 import com.creve_ip.award.HelloMessage;
+import com.creve_ip.award.entity.ThanksCategory;
+import com.creve_ip.award.entity.ThanksPost;
 import com.creve_ip.award.form.ThanksForm;
 
 @Controller
@@ -29,20 +31,42 @@ public class ThanksController {
 
     @PostMapping("/award")
     public void saveObject(ThanksForm thanksForm) {
+        
+        ThanksPost thanksPost = new ThanksPost();
+        ThanksCategory thanksCategory = new ThanksCategory();        
         // tmp
-        System.out.println("1．送り主を明かすかどうか：" + thanksForm.getSenderVisibility());
+        System.out.println("1．送り主を明かすかどうか：" + thanksForm.isSenderVisibility());
+        thanksPost.setSenderVisibility(thanksForm.isSenderVisibility());
         
         // tmp
         System.out.println("2．投票先：" + thanksForm.getRecipient());
+        thanksPost.setRecipient(thanksForm.getRecipient());
         
         // tmp
+        // TODO 処理がイケてない。。チェックされている場合は「1」そうでない場合は「0」を出力したい。
         System.out.println("3．カテゴリ選択：");
         for (String element : thanksForm.getCategory()) {
             System.out.println("  " + element);
+            if(element.equals("colleague")) {
+                thanksCategory.setColleague(true);
+            } else {
+                thanksCategory.setColleague(false);
+            }
+            if(element.equals("customer")) {
+                thanksCategory.setCustomer(true);
+            } else {
+                thanksCategory.setCustomer(false);
+            }
+            if(element.equals("company")) {
+                thanksCategory.setCompany(true);
+            } else {
+                thanksCategory.setCompany(false);
+            }
         }
         
         // tmp
         System.out.println("4．エピソード：" + thanksForm.getEpisode());
+        thanksPost.setEpisode(thanksForm.getEpisode());
     }
 
     // チェックボックス用

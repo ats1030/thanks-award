@@ -22,7 +22,7 @@ public class ThanksPostService {
         return thanksPostRepository.findAll();
     }
     
-    public void save(ThanksPost thanksPost) {
-        thanksPostRepository.save(thanksPost);
-    }
+//    public void save(ThanksPost thanksPost) {
+//        thanksPostRepository.save(thanksPost);
+//    }
 }

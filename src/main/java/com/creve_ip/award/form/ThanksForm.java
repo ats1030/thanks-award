@@ -2,11 +2,10 @@ package com.creve_ip.award.form;
 
 import lombok.Data;
 
-
 @Data
 public class ThanksForm {
 
-    private String senderVisibility; // 1．投稿者公表の可否 FIXME: Booleanにする？
+    private boolean senderVisibility; // 1．投稿者公表の可否 FIXME: Booleanにする？
 
     private String recipient; // 2．受賞者
 

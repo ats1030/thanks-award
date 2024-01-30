@@ -1,6 +1,6 @@
 CREATE TABLE posts (
   id VARCHAR(16) NOT NULL
-  ,sender_visibility VARCHAR(16) NOT NULL
+  ,sender_visibility BOOLEAN NOT NULL
   ,sender VARCHAR(16) DEFAULT 'default_sender' NOT NULL
   ,recipient VARCHAR(16) NOT NULL
   ,category_id VARCHAR(16) NOT NULL
@@ -10,9 +10,9 @@ CREATE TABLE posts (
 
 CREATE TABLE category (
   id VARCHAR(16) NOT NULL
-  ,colleague VARCHAR(16) NOT NULL
-  ,customer VARCHAR(16) NOT NULL
-  ,company VARCHAR(16) NOT NULL
+  ,colleague BOOLEAN NOT NULL
+  ,customer BOOLEAN NOT NULL
+  ,company BOOLEAN NOT NULL
   ,PRIMARY KEY (id)
 );
   

@@ -16,9 +16,9 @@ public class ThanksCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String colleague;  // FIXME: Booleanにする？
+    private boolean colleague;  // FIXME: Booleanにする？
     
-    private String customer;  // FIXME: Booleanにする？
+    private boolean customer;  // FIXME: Booleanにする？
     
-    private String company;  // FIXME: Booleanにする？
+    private boolean company;  // FIXME: Booleanにする？
 }
